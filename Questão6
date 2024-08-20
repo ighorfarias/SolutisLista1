@@ -10,3 +10,7 @@ public class ProdutoImpares {
                 produtoFloat *= i;
             }
         }
+        System.out.println("O produto dos números ímpares de 15 a 30 (int): " + produtoInt);
+        System.out.println("O produto dos números ímpares de 15 a 30 (float): " + produtoFloat);
+    }
+}
