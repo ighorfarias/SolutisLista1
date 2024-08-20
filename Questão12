@@ -1,1 +1,37 @@
+import java.util.Scanner;
 
+public class ConsumoCombustivel {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Variáveis para armazenar os totais
+        int quilometragemTotal = 0;
+        int litrosTotais = 0;
+        int contadorTanques = 0;
+        char continuar;
+
+        do {
+            System.out.print("Digite a quilometragem dirigida (em km) para o tanque " + (contadorTanques + 1) + ": ");
+            int quilometros = scanner.nextInt();
+
+            System.out.print("Digite a quantidade de litros consumidos para o tanque " + (contadorTanques + 1) + ": ");
+            int litros = scanner.nextInt();
+
+            float consumoAtual = (float) quilometros / litros;
+            System.out.println("O consumo para o tanque " + (contadorTanques + 1) + " é: " + consumoAtual + " km/l");
+            
+            quilometragemTotal += quilometros;
+            litrosTotais += litros;
+            contadorTanques++;
+            System.out.print("Deseja adicionar outro tanque? (S/N): ");
+            continuar = scanner.next().charAt(0);
+
+        } while (continuar == 'S' || continuar == 's');
+
+        float mediaGeral = (float) quilometragemTotal / litrosTotais;
+        System.out.println("\nResumo:");
+        System.out.println("Quilometragem total: " + quilometragemTotal + " km");
+        System.out.println("Total de litros consumidos: " + litrosTotais + " L");
+        System.out.println("Consumo médio geral: " + mediaGeral + " km/l");
+    }
+}
