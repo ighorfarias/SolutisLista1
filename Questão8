@@ -15,7 +15,6 @@ public class Palindromo {
         }
     }
 
-    // Método para verificar se uma palavra é um palíndromo
     public static boolean ehPalindromo(String palavra) {
 
         String palavraFormatada = palavra.replaceAll("\\s+", "").toLowerCase();
